@@ -1,0 +1,75 @@
+.container {
+  background: $white;
+  margin: 0 auto;
+  padding: 0 20px;
+    @include mq(large) {
+    max-width: 1400px;
+  }
+}
+
+
+.grid__row {
+  width: 90%;
+  margin: 25px 30px;
+    @include flexy(column);
+    &:first-of-type {
+      align-items: center;
+    }
+    @include mq(med) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+}
+
+
+[class^='grid__col--'] {
+  @include flexy(column);
+  width: 100%;
+  @include mq(med) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+
+.grid__col {
+  @each $col, $color in $grid-colors {
+      &--#{$col}.theme__colors {
+        @extend %b-rounded;
+        text-align: left;
+        text-transform: lowercase;
+        color: $text-color;
+        background: $color;
+      }
+  }
+}
+
+
+@include mq(med) {
+  @for $i from 1 through $grid-col-count {
+    $context: grid-context( $grid-col-width, $grid-col-count, $grid-gutter-width );
+    $target: ( $grid-col-width * $i ) + ( $grid-gutter-width * ( $i - 1 ) );
+
+    .grid__col--#{$i} {
+        width: percentage( $target / $context );
+        justify-content: center;
+    }
+  }
+}
+
+
+[class^='grid__col--'] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include mq(med) {
+      min-height: 1px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+}
+
+
+.centered {
+  margin: 0 auto;
+}

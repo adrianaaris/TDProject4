@@ -1,0 +1,20 @@
+
+.form {
+  @include flexy(column);
+  width: 100%;
+  }
+
+
+  .form__label--hidden {
+    display: none;
+  }
+
+  .form__input {
+    border: none;
+    border-bottom: 6px solid $primary-color;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 20px;
+    margin-top: 6px;
+    padding-bottom: 7px;
+}

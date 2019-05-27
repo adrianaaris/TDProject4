@@ -1,0 +1,25 @@
+
+.img--logo {
+    display: block;
+    margin: 40px auto 14px;
+    width: 160px;
+    height: 80px;
+  }
+
+
+  .img--avatar {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+  }
+
+
+  .img--frame {
+    display: block;
+    width: 100%;
+    max-width: 90%;
+    padding: 13px;
+    margin: 0 auto;
+    border: 1px solid $dark-grey;
+  }

@@ -1,0 +1,42 @@
+
+.nav {
+  @include flexy(column, center);
+  padding: 0;
+  margin: 0 0 30px;
+  @include mq(med) {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+
+  .nav__item {
+    @include mq(large) {
+      margin: 0 15px;
+    }
+    a {
+      &:link,
+      &:visited {
+        color: $text-color;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-weight: 400;
+        font-size: 18px;
+        padding: 10px;
+        border-radius: 5px;
+
+        @include mq(med) {
+          padding: 7px 20px;
+        }
+        @include mq(large) {
+          padding: 3px 20px;
+        }
+      }
+       &:hover,
+       &:active {
+         color: $white;
+         background-color: $primary-color;
+       }
+     }
+  }
+}

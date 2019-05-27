@@ -1,0 +1,56 @@
+//Repeated values
+//Minimum: Fonts, Breakpoints, Colors
+
+//Font
+$font-url: 'https://fonts.googleapis.com/css?family=Lato:300,400,600,800';
+$font-stack: 'Lato', sans-serif;
+
+// Breakpoints
+$break-md: 769px;
+$break-lg: 1400px;
+
+// Colors
+$white: #FFFFFF;
+$dark-grey: #A9A9A9;
+$light-grey: lighten($dark-grey, 20%);
+
+$text-color: $dark-grey;
+$primary-color: #7FFFD4;//aquamarine
+
+
+$Deepskyblue: #00BFFF;
+$LightGreen: #90EE90;
+$LightCoral: #F08080;
+$Coral: #FF7F50;
+$MediumPurple: #9370DB;
+
+// Color-Buttons
+$ui-colors: (
+	default : $Deepskyblue,
+	success : $LightGreen,
+	error   : $LightCoral,
+	warning : $Coral,
+	info    : $MediumPurple
+);
+
+// Color-Grids
+$grid-colors: (
+	1: lighten($dark-grey, 10%),
+	2: lighten($Coral, 20%),
+	3: lighten($MediumPurple, 20%),
+	4: lighten($Deepskyblue, 20%),
+	5: lighten($LightGreen, 10%),
+	6: darken($Deepskyblue, 20%),
+	7: lighten($LightCoral, 10%),
+	8: lighten($Coral, 10%),
+	9: lighten($LightCoral, 10%),
+	10: darken($MediumPurple, 10%),
+	11: lighten($Coral, 10%),
+	12: lighten($LightGreen, 10%)
+);
+
+// Grids
+$grid-col-width: 65px;
+$grid-gutter-width: 20px;
+$grid-col-count: 12;
+$grid-container-max-width: 1050px;

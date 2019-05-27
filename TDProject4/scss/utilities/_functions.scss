@@ -1,0 +1,10 @@
+@if variable-exists(font-url) {
+  @import url($font-url);
+}
+
+
+
+@function grid-context( $grid-col-width, $grid-col-count, $grid-gutter-width ) {
+  $fluid-grid-context: ( $grid-col-width * $grid-col-count ) + ( $grid-gutter-width * ( $grid-col-count - 1 ) );
+  @return $fluid-grid-context;
+}

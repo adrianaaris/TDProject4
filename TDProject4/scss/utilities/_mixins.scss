@@ -1,0 +1,43 @@
+//Minimum: Media Queries, Flexbox
+
+@mixin mq($break){
+  @if $break == 'med' {
+    @media (min-width: $break-md) {
+      @content;
+    }
+  }
+  @else if $break == 'large' {
+    @media (min-width: $break-lg) {
+      @content;
+    }
+  }
+}
+
+
+@mixin flexy($dir: row, $just: flex-start, $align: stretch){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+    @content;
+}
+
+
+@mixin buttons($map) {
+  @each $theme, $color in $map {
+    &--#{$theme}.theme__colors {
+      @extend %btn;
+      background-color: $color;
+      @content;
+      @include mq(med) {
+        margin-right: 20px;
+      }
+      @include mq(large) {
+        margin-right: 30px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
